@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "PixelFont";
+    src: url("https://fonts.cdnfonts.com/s/19687/PressStart2P-Regular.woff") format("woff");
+}
+
+:root {
+    --factorio-dark-bg: #1a1a1a;
+    --factorio-panel-bg: #383838;
+    --factorio-border-light: #555555;
+    --factorio-border-dark: #111111;
+    --factorio-orange: #e4790b;
+    --factorio-text: #e8e8e8;
+    --factorio-code-text: #ff9d33;
+}
+
+body {
+    font-family: "PixelFont", Arial, sans-serif;
+    background-color: var(--factorio-dark-bg);
+    background-image:
+        linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--factorio-text);
+    margin: 15px;
+    padding: 0;
+    transition: background-position 0.1s linear;
+}
+
+h1 {
+    font-size: 26px;
+    color: var(--factorio-orange);
+    text-shadow: 2px 2px 0 #000;
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.block {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px solid var(--factorio-border-dark);
+    border-top-color: var(--factorio-border-light);
+    border-left-color: var(--factorio-border-light);
+    background: var(--factorio-panel-bg);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.control-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.control-row label {
+    flex-shrink: 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    font-family: "PixelFont", monospace;
+    font-size: 12px;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 12px;
+    resize: vertical;
+}
+
+input[type="text"], textarea {
+    background: #181818;
+    color: var(--factorio-code-text);
+    border: 2px solid #111;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background: #4f4f4f;
+    color: var(--factorio-text);
+    font-family: "PixelFont", Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: 2px solid #222;
+    border-top-color: #777;
+    border-left-color: #777;
+    border-radius: 4px;
+    cursor: pointer;
+    text-shadow: 1px 1px 0 #000;
+    transition: all 0.1s ease-in-out;
+    white-space: nowrap;
+}
+
+button:hover {
+    background: #5a5a5a;
+}
+
+button:active {
+    background-color: #404040;
+    border-color: #222;
+    border-top-color: #333;
+    border-left-color: #333;
+    transform: translateY(1px);
+}
+
+.button-push-right {
+    margin-left: auto;
+}
+
+.footer, .guide {
+    text-align: center;
+    margin-top: 30px;
+}
+
+a {
+    color: var(--factorio-orange);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@keyframes flash-orange {
+    50% {
+        background-color: var(--factorio-orange);
+        border-color: #ffc27a;
+    }
+}
+
+.is-copying {
+    animation: flash-orange 0.5s ease-in-out;
+}
+
+.copy-feedback {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    color: var(--factorio-orange);
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease-out;
+    pointer-events: none;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+    transform: translateY(0);
+}

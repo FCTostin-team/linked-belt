@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCT-Team Code Generator (Factorio Style)</title>
+    <link rel="icon" href="https://i.ibb.co/QJD5Qsp/linked-belt16-16.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Linked-Belt By FCT-team</h1>
+
+    <div class="block">
+        <div class="control-row">
+            <img src="https://i.ibb.co/TkvMNSL/linkbelt2.png" style="width: 50px; height: 25px;" />
+            <label for="nameInput1">Конвейер погрузки:</label>
+            <input type="text" id="nameInput1" placeholder="1-Тег конвейера" />
+            <button id="copyButton1">Скопировать</button>
+            <span class="copy-feedback">скопировано</span>
+        </div>
+        <textarea id="codeArea1" readonly></textarea>
+    </div>
+
+    <div class="block">
+        <div class="control-row">
+            <img src="https://i.ibb.co/WpWXL1g/linkbelt1.png" style="width: 50px; height: 25px;" />
+            <label for="nameInput2">Конвейер разгрузки:</label>
+            <input type="text" id="nameInput2" placeholder="2-Тег конвейера" />
+            <button id="copyButton2">Скопировать</button>
+            <span class="copy-feedback">скопировано</span>
+        </div>
+        <textarea id="codeArea2" readonly></textarea>
+    </div>
+
+    <div class="block">
+        <div class="control-row">
+            <img src="https://i.ibb.co/tqGNcfX/linkbelt3.png" style="width: 60px; height: 25px;" />
+            <label for="nameInput3">Код объединения конвейеров:</label>
+            <button id="copyButton3" class="button-push-right">Скопировать</button>
+            <span class="copy-feedback">скопировано</span>
+        </div>
+        <textarea id="codeArea3" readonly style="height: 110px; font-size: 15px;"></textarea>
+    </div>
+
+    <p class="guide">Руководство: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3392327413" target="_blank">Как настроить Связанные конвейеры</a></p>
+
+    <div class="footer" style="font-size: 0.8em; line-height: 1.6; opacity: 0.7;">
+        <p>
+            <a href="https://www.youtube.com/@FCT-Ostin" target="_blank">YouTube</a> |
+            <a href="https://t.me/FCTostin" target="_blank">Telegram</a> |
+            <a href="https://steamcommunity.com/groups/FCTgroup" target="_blank">Steam Группа</a> |
+            <a href="https://www.patreon.com/c/OstinFCT" target="_blank">Patreon</a> |
+            <a href="https://boosty.to/ostinfct" target="_blank">Boosty</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
