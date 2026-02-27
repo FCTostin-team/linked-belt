@@ -8,12 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Linked-Belt By FCT-team</h1>
+    <div class="language-control">
+        <select id="lang-select" class="lang-dropdown" aria-label="Выбор языка">
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+            <option value="uk">Українська</option>
+            <option value="kk">Қазақша</option>
+            <option value="cs">Čeština</option>
+            <option value="nl">Nederlands</option>
+            <option value="sv">Svenska</option>
+            <option value="de">Deutsch</option>
+            <option value="pl">Polski</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+        </select>
+    </div>
+
+    <h1 id="app-title">Linked-Belt By FCT-team</h1>
 
     <div class="block">
         <div class="control-row">
-            <img src="https://i.ibb.co/TkvMNSL/linkbelt2.png" style="width: 50px; height: 25px;" />
-            <label for="nameInput1">Конвейер погрузки:</label>
+            <img src="https://i.ibb.co/TkvMNSL/linkbelt2.png" class="belt-image belt-image-sm" alt="Linked belt input" />
+            <label for="nameInput1" id="label-input">Конвейер погрузки:</label>
             <input type="text" id="nameInput1" placeholder="1-Тег конвейера" />
             <button id="copyButton1">Скопировать</button>
             <span class="copy-feedback">скопировано</span>
@@ -23,8 +40,8 @@
 
     <div class="block">
         <div class="control-row">
-            <img src="https://i.ibb.co/WpWXL1g/linkbelt1.png" style="width: 50px; height: 25px;" />
-            <label for="nameInput2">Конвейер разгрузки:</label>
+            <img src="https://i.ibb.co/WpWXL1g/linkbelt1.png" class="belt-image belt-image-sm" alt="Linked belt output" />
+            <label for="nameInput2" id="label-output">Конвейер разгрузки:</label>
             <input type="text" id="nameInput2" placeholder="2-Тег конвейера" />
             <button id="copyButton2">Скопировать</button>
             <span class="copy-feedback">скопировано</span>
@@ -34,21 +51,21 @@
 
     <div class="block">
         <div class="control-row">
-            <img src="https://i.ibb.co/tqGNcfX/linkbelt3.png" style="width: 60px; height: 25px;" />
-            <label for="nameInput3">Код объединения конвейеров:</label>
+            <img src="https://i.ibb.co/tqGNcfX/linkbelt3.png" class="belt-image belt-image-md" alt="Linked belt combined code" />
+            <label for="nameInput3" id="label-combined">Код объединения конвейеров:</label>
             <button id="copyButton3" class="button-push-right">Скопировать</button>
             <span class="copy-feedback">скопировано</span>
         </div>
-        <textarea id="codeArea3" readonly style="height: 110px; font-size: 15px;"></textarea>
+        <textarea id="codeArea3" class="code-area-combined" readonly></textarea>
     </div>
 
-    <p class="guide">Руководство: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3392327413" target="_blank">Как настроить Связанные конвейеры</a></p>
+    <p class="guide"><span id="guide-label">Руководство:</span> <a id="guide-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3392327413" target="_blank">Как настроить Связанные конвейеры</a></p>
 
-    <div class="footer" style="font-size: 0.8em; line-height: 1.6; opacity: 0.7;">
+    <div class="footer footer-meta">
         <p>
             <a href="https://www.youtube.com/@FCT-Ostin" target="_blank">YouTube</a> |
             <a href="https://t.me/FCTostin" target="_blank">Telegram</a> |
-            <a href="https://steamcommunity.com/groups/FCTgroup" target="_blank">Steam Группа</a> |
+            <a id="steam-group-link" href="https://steamcommunity.com/groups/FCTgroup" target="_blank">Steam Группа</a> |
             <a href="https://www.patreon.com/c/OstinFCT" target="_blank">Patreon</a> |
             <a href="https://boosty.to/ostinfct" target="_blank">Boosty</a>
         </p>

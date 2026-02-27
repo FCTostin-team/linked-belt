@@ -8,6 +8,19 @@ const copyButton2 = document.getElementById('copyButton2');
 
 const codeArea3 = document.getElementById('codeArea3');
 const copyButton3 = document.getElementById('copyButton3');
+const langSelect = document.getElementById('lang-select');
+
+const translatableElements = {
+    title: document.getElementById('app-title'),
+    labelInput: document.getElementById('label-input'),
+    labelOutput: document.getElementById('label-output'),
+    labelCombined: document.getElementById('label-combined'),
+    guideLabel: document.getElementById('guide-label'),
+    guideLink: document.getElementById('guide-link'),
+    steamGroupLink: document.getElementById('steam-group-link')
+};
+
+window.LINKED_BELT_LOCALES = window.LINKED_BELT_LOCALES || {};
 
 const originalCode1 = `/c
 local player = game.players[1]
@@ -39,8 +52,8 @@ o.linked_belt_type = 'output'
 i.connect_linked_belts(o)`;
 
 function updateCombinedCode() {
-    const tag1 = nameInput1.value || "FCTteam1";
-    const tag2 = nameInput2.value || "FCTteam2";
+    const tag1 = nameInput1.value || 'FCTteam1';
+    const tag2 = nameInput2.value || 'FCTteam2';
 
     const updatedCode1 = originalCode1.replace(/entity\.name_tag = ".*?"/, `entity.name_tag = "${tag1}"`);
     codeArea1.value = updatedCode1;
@@ -69,6 +82,70 @@ function showCopyFeedback(button) {
     }, 2000);
 }
 
+function getSavedLanguage() {
+    const saved = localStorage.getItem('linked-belt-lang');
+    if (saved && langSelect.querySelector(`option[value="${saved}"]`)) {
+        return saved;
+    }
+    return 'ru';
+}
+
+function applyLocale(locale) {
+    const data = window.LINKED_BELT_LOCALES[locale];
+    if (!data) {
+        return;
+    }
+
+    document.documentElement.lang = locale;
+    document.title = data.pageTitle;
+
+    translatableElements.title.textContent = data.appTitle;
+    translatableElements.labelInput.textContent = data.loadingLabel;
+    translatableElements.labelOutput.textContent = data.unloadingLabel;
+    translatableElements.labelCombined.textContent = data.mergeLabel;
+    translatableElements.guideLabel.textContent = data.guideLabel;
+    translatableElements.guideLink.textContent = data.guideLinkText;
+    translatableElements.steamGroupLink.textContent = data.steamGroupLabel;
+
+    nameInput1.placeholder = data.inputPlaceholder;
+    nameInput2.placeholder = data.outputPlaceholder;
+
+    copyButton1.textContent = data.copyButton;
+    copyButton2.textContent = data.copyButton;
+    copyButton3.textContent = data.copyButton;
+
+    document.querySelectorAll('.copy-feedback').forEach((element) => {
+        element.textContent = data.copiedFeedback;
+    });
+}
+
+function loadLocaleScript(locale) {
+    if (window.LINKED_BELT_LOCALES[locale]) {
+        return Promise.resolve();
+    }
+
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `profiles/${locale}.js`;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load locale: ${locale}`));
+        document.head.appendChild(script);
+    });
+}
+
+async function setLanguage(locale) {
+    try {
+        await loadLocaleScript(locale);
+        applyLocale(locale);
+        localStorage.setItem('linked-belt-lang', locale);
+    } catch (error) {
+        if (locale !== 'ru') {
+            await setLanguage('ru');
+            langSelect.value = 'ru';
+        }
+    }
+}
+
 nameInput1.addEventListener('input', updateCombinedCode);
 nameInput2.addEventListener('input', updateCombinedCode);
 
@@ -90,12 +167,20 @@ copyButton3.addEventListener('click', () => {
     showCopyFeedback(copyButton3);
 });
 
+langSelect.addEventListener('change', async (event) => {
+    await setLanguage(event.target.value);
+});
+
 updateCombinedCode();
 
-document.addEventListener('mousemove', (e) => {
+const initialLanguage = getSavedLanguage();
+langSelect.value = initialLanguage;
+setLanguage(initialLanguage);
+
+document.addEventListener('mousemove', (event) => {
     const body = document.body;
     const { innerWidth, innerHeight } = window;
-    const { clientX, clientY } = e;
+    const { clientX, clientY } = event;
 
     const moveStrength = 40;
 
