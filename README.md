@@ -1,13 +1,14 @@
 # FCT Linked-Belt Generator <a href="https://github.com/OstinUA"><img align="right" src="https://img.shields.io/badge/OstinUA-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 
-> A lightweight Factorio-focused web utility that spits out production-ready Lua console commands for spawning and linking `linked-belt` entities by tag.
+![Factorio: 2.0+](https://img.shields.io/badge/Factorio-2.0%2B%20%2F%20Space%20Age-orange?style=for-the-badge)
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue?style=for-the-badge)](LICENSE)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Factorio](https://img.shields.io/badge/Factorio-orange?style=for-the-badge&logo=factorio&logoColor=white)
-![Repo Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
+![Platform: Web](https://img.shields.io/badge/Platform-Web_App-0ea5e9?style=for-the-badge)
+[![Frontend: Vanilla JS](https://img.shields.io/badge/Frontend-Vanilla%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](script.js)
+[![Styles: CSS3](https://img.shields.io/badge/Styles-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](style.css)
+[![Markup: HTML5](https://img.shields.io/badge/Markup-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](index.html)
+![Status: Active](https://img.shields.io/badge/Status-Active-22c55e?style=for-the-badge)
+![Coverage: Manual](https://img.shields.io/badge/Coverage-Manual%20Validation-lightgrey?style=for-the-badge)
+[![i18n](https://img.shields.io/badge/i18n-multi--language-2ea44f?style=for-the-badge)](#features)
 
 > [!IMPORTANT]
 > This tool generates **console commands** (`/c`) for Factorio. It does not patch saves or mods directly.
@@ -223,3 +224,9 @@ Project created with the support of the FCTostin community.
 
 [![Patreon](https://img.shields.io/badge/Patreon-Support-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/c/OstinFCT)
 [![Boosty](https://img.shields.io/badge/Boosty-Donate-F15F2C?style=for-the-badge&logo=boosty&logoColor=white)](https://boosty.to/ostinfct)
+
+## Contacts
+
+- GitHub: [OstinUA](https://github.com/OstinUA)
+- Team page: [FCTostin-team](https://github.com/FCTostin-team)
+- Contribution process: see [`CONTRIBUTING.md`](CONTRIBUTING.md).
