@@ -1,208 +1,42 @@
-# Contributing to FCT Linked-Belt Generator
+# <a href="https://github.com/OstinUA" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/OstinUA/Image-storage/main/Factorio/Gear-silhouette-of-the-Factorio-logo.png" width="32" valign="middle" alt="telegram:FCTostin"></a> Contributing Guide <a href="https://github.com/OstinUA"></a>
 
-Thanks for considering a contribution. You are awesome. Whether you're fixing a tiny UX edge case or shipping a bigger feature, every clean PR helps keep this tool fast, stable, and useful for the Factorio community.
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-3e80ed?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FCTostin-team)
+[![Open Source](https://img.shields.io/badge/Open_Source-Yes-brightgreen?style=for-the-badge&logo=open-source&logoColor=white)](https://github.com/FCTostin-team)
+[![Views](https://img.shields.io/badge/Profile_Views-%31&#56;%33-blueviolet?style=for-the-badge)](https://github.com/OstinUA)
+[![OstinUA](https://capsule-render.vercel.app/api?type=rect&color=FFA500&height=2&)](https://github.com/OstinUA)
 
-## Introduction
 
-This project is a lightweight, static web utility focused on generating reliable Factorio linked-belt console commands. We optimize for:
+Hello! Thank you for your interest in contributing to this project. I am always open to any help, whether it's fixing bugs, adding new features, improving documentation, or just sharing fresh ideas. 
 
-- clear behavior,
-- minimal complexity,
-- low maintenance overhead,
-- contributor-friendly architecture.
+This document is not a strict set of rules, but a simple guide on how we can comfortably and productively work together.
 
-If that's your vibe, you're in the right place.
+## ⬢ How You Can Help
 
-## I Have a Question
+* **Found a bug?** Open an Issue and briefly describe what went wrong and how to reproduce it.
+* **Have a cool idea?** Create an Issue with your proposal. It's always best to discuss an idea first before spending time writing code.
+* **Improving documentation.** Fixing typos, expanding instructions, or translating — absolutely any help is valuable.
+* **Ready to write code?** Feel free to fork the repository and open a Pull Request.
 
-Please **do not use GitHub Issues for general usage questions**.
+## ⬢ Pull Request Process
 
-Issues are reserved for actionable engineering work (bugs, enhancements, tasks). For help and discussion, use one of these channels instead:
+The workflow here is as straightforward as possible:
 
-- Telegram community chat: https://t.me/FCTostin
-- YouTube channel comments/discussions: https://www.youtube.com/@FCT-Ostin
-- Steam group: https://steamcommunity.com/groups/FCTgroup
+1. Fork this repository.
+2. Create a new branch for your changes (`git checkout -b feature/my-awesome-idea` or `git checkout -b bugfix/issue-123`).
+3. Make your changes and commit them (`git commit -m "Add new awesome feature"`).
+4. Push the changes to your fork (`git push origin feature/my-awesome-idea`).
+5. Open a Pull Request to this repository.
 
-If your question reveals an actual bug, feel free to open an issue using the bug-report checklist below.
+## ⬢ A Few Simple Requests
 
-## Reporting Bugs
+* Try to stick to the code style already used in the project.
+* Make your commit messages clear so it's easy to understand what changed.
+* If your Pull Request resolves a specific Issue, mention its number in the description (e.g., `Closes #42`).
+* If the logic changes, please update the relevant section in the README.
 
-Before opening a bug report:
+## ⬢ Feedback
 
-1. Search existing Issues for duplicates.
-2. Re-test with a clean browser session and current repository version.
-3. Confirm it is reproducible, not just a one-off environment glitch.
+I try to review all Issues and Pull Requests as quickly as possible. If I haven't replied in a while, don't hesitate to ping me in the comments.
 
-### What to Include in a Good Bug Report
-
-- **Environment details**
-  - OS and version (for example: Windows 11, Ubuntu 24.04)
-  - Browser and version (for example: Chrome 130)
-  - Factorio version (if issue depends on generated command behavior)
-  - App version/commit hash (or date + branch)
-
-- **Steps to reproduce**
-  - Exact sequence from app open to failure
-  - Input tags used
-  - Which command block failed (input/output/combined)
-
-- **Expected behavior**
-  - What should happen
-
-- **Actual behavior**
-  - What actually happened
-  - Any console errors from browser devtools
-
-- **Artifacts**
-  - Screenshots / short clip (for UI issues)
-  - Copy of generated Lua snippet (for logic issues)
-
-## Suggesting Enhancements
-
-Feature requests are welcome when they solve a real user problem.
-
-A high-signal enhancement request should include:
-
-- **Problem statement:** what friction exists today?
-- **Proposed solution:** what change do you suggest?
-- **Use cases:** where this helps in practical Factorio workflows
-- **Scope:** whether this is UI-only, logic-only, or both
-- **Alternatives considered:** if relevant
-
-The more concrete your scenario, the easier it is to evaluate and prioritize.
-
-## Local Development / Setup
-
-### 1) Fork and Clone
-
-```bash
-# Fork on GitHub first, then clone your fork
-git clone https://github.com/<your-username>/linked-belt.git
-cd linked-belt
-```
-
-### 2) Add Upstream Remote
-
-```bash
-git remote add upstream https://github.com/OstinUA/linked-belt.git
-git fetch upstream
-```
-
-### 3) Run the Project Locally
-
-```bash
-# Option A: open index.html directly
-# Option B (recommended): run a static server
-python -m http.server 8080
-# open http://localhost:8080
-```
-
-### 4) Validate Your Changes
-
-```bash
-# JS syntax sanity check
-node --check script.js
-```
-
-No dependency install step is required at the moment (no `package.json`, no backend runtime).
-
-## Pull Request Process
-
-### Branch Naming
-
-Use predictable branch names:
-
-- `feature/<short-description>`
-- `bugfix/<short-description>`
-- `docs/<short-description>`
-- `chore/<short-description>`
-
-Examples:
-
-- `feature/multi-copy-hotkeys`
-- `bugfix/locale-fallback-logic`
-- `docs/rewrite-readme`
-
-### Commit Messages
-
-Use **Conventional Commits**:
-
-- `feat: add language fallback warning`
-- `fix: prevent empty tag overwrite in combined script`
-- `docs: improve setup and deployment sections`
-- `chore: normalize profile locale keys`
-
-### Keep Branch Updated
-
-Before opening a PR, sync with upstream main:
-
-```bash
-git fetch upstream
-git rebase upstream/main
-```
-
-### PR Description Checklist
-
-Your PR description should include:
-
-- short summary of what changed and why,
-- linked issue(s) (`Closes #123`) when applicable,
-- testing notes (what you ran and what you verified),
-- screenshots/GIFs for UI or visual changes.
-
-Small, focused PRs are reviewed faster than mega-patches.
-
-## Styleguides
-
-### Code Style
-
-- Keep it simple and explicit (vanilla JS + readable DOM logic).
-- Avoid unnecessary abstractions for small features.
-- Match existing naming and formatting patterns in touched files.
-- Do not refactor unrelated code in the same PR.
-
-### Linting / Formatting
-
-At the moment there is no enforced linter/formatter pipeline in-repo.
-
-Recommended local hygiene:
-
-- run `node --check script.js` for syntax,
-- manually verify no broken layout in browser,
-- keep Markdown clean and structurally consistent.
-
-### Architecture Expectations
-
-- Preserve static-first architecture (no backend coupling).
-- Keep locale handling compatible with `profiles/<lang>.js` loading model.
-- Ensure fallback behavior remains stable if locale loading fails.
-
-## Testing
-
-New behavior should be validated before opening a PR.
-
-Minimum expectation:
-
-```bash
-node --check script.js
-python -m http.server 8080
-```
-
-Manual test expectations:
-
-- input/output tags update generated blocks correctly,
-- combined command references the correct tags,
-- copy buttons copy the expected snippet,
-- language switching works and persists across reloads.
-
-If you add logic-heavy functionality, include reproducible verification steps in the PR body.
-
-## Code Review Process
-
-- Maintainers review incoming PRs for correctness, clarity, and scope.
-- Typical requirement: at least one maintainer approval before merge.
-- If review feedback is requested, push follow-up commits or amend cleanly.
-- Resolve all open review comments before requesting re-review.
-- Keep discussion technical, respectful, and outcome-focused.
-
-Thanks again for contributing and helping make the tool better for everyone.
+The main rule is mutual respect. Welcome, and thank you for your contribution!
+[![OstinUA](https://capsule-render.vercel.app/api?type=rect&color=FFA500&height=2&)](https://github.com/OstinUA)
